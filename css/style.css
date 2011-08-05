@@ -220,8 +220,54 @@ p {
 	color: #666;
 }
 
+.cootie {
+margin: 0 auto;
+position:relative;
+width:300px;
+height:300px;
 
+ -moz-transform: rotate(45deg);  
+       -o-transform: rotate(45deg);  
+  -webkit-transform: rotate(45deg);  
+      -ms-transform: rotate(45deg);  
+          transform: rotate(45deg);  
 
+}
+.cootie canvas { 
+display:block;
+position:absolute;
+/*	color: #900;*/
+	-webkit-transition: color .4s linear;
+	-moz-transition: color .4s linear;
+	-o-transition: color .4s linear;
+	-ms-transition: color .4s linear;
+	transition: color .4s linear;
+}
+.cootie canvas:hover {
+	color: #9cc;
+}
+.cootie canvas:nth-child(odd) { left:0;}
+.cootie canvas:nth-child(even) {left:142px;}
+.cootie canvas:nth-child(1), .cootie canvas:nth-child(2) { top:0; }
+.cootie canvas:nth-child(3), .cootie canvas:nth-child(4) { top:142px; }
+/*
+.cootie canvas:nth-child(1), .cootie canvas:nth-child(4) {
+     -moz-transform: rotate(45deg);  
+       -o-transform: rotate(45deg);  
+  -webkit-transform: rotate(45deg);  
+      -ms-transform: rotate(45deg);  
+          transform: rotate(45deg);  
+          
+}
+
+.cootie canvas:nth-child(2), .cootie canvas:nth-child(3) {
+     -moz-transform: rotate(-45deg);  
+       -o-transform: rotate(-45deg);  
+  -webkit-transform: rotate(-45deg);  
+      -ms-transform: rotate(-45deg);  
+          transform: rotate(-45deg);  
+          
+}*/
 /* end @mejarc's styles */
 
 .ir {
