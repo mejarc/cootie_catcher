@@ -200,6 +200,7 @@ body {
   background-image:      -o-linear-gradient(top, #aaaaaa, #0c9); 
   background-image:         linear-gradient(top, #aaaaaa, #0c9);
 background-attachment: fixed;
+font: 12px/2 Palatino, “Palatino Linotype”, Georgia, Times, “Times New Roman”, serif;
 }
 
 html body #progress, html body #instructions { border: 0; }
@@ -226,7 +227,7 @@ h2 {
     font-style:italic;
     margin: 0 0 1px 0;
 }
-p {font: 10/2 Palatino, “Palatino Linotype”, Georgia, Times, “Times New Roman”, serif;
+p {
     margin: 0 0 15px 0;
     color: #666;
 }
