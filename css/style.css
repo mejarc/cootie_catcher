@@ -192,20 +192,20 @@ a:hover {
 
 /* begin @mejarc's styles */
 body { 
-  background-color: #aaaaaa;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#aaaaaa), to(#0c9)); 
-  background-image: -webkit-linear-gradient(top, #aaaaaa, #0c9); 
-  background-image:    -moz-linear-gradient(top, #aaaaaa, #0c9); 
-  background-image:     -ms-linear-gradient(top, #aaaaaa, #0c9); 
-  background-image:      -o-linear-gradient(top, #aaaaaa, #0c9); 
-  background-image:         linear-gradient(top, #aaaaaa, #0c9);
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ffc)); 
+  background-image: -webkit-linear-gradient(top, #fff, #ffc); 
+  background-image:    -moz-linear-gradient(top, #fff, #ffc); 
+  background-image:     -ms-linear-gradient(top, #fff, #ffc); 
+  background-image:      -o-linear-gradient(top, #fff, #ffc); 
+  background-image:         linear-gradient(top, #fff, #ffc);
 background-attachment: fixed;
 font: 12px/2 Palatino, “Palatino Linotype”, Georgia, Times, “Times New Roman”, serif;
 }
 
 html body #progress, html body #instructions { border: 0; }
 body div:first-child {
-background:rgba(0, 204, 153, 0.3);
+/*background:rgba(0, 204, 153, 0.3);*/
 }
 body header:first-child h1 {
     font-family: Palatino, “Palatino Linotype”, “Hoefler Text”, Times, “Times New Roman”, serif;
@@ -248,17 +248,17 @@ p {
 .cootie canvas { 
     display:block;
     position:absolute;
-    
     -moz-box-shadow: 0 0 4px #aaa; 
     -webkit-box-shadow: 0 0 4px #aaa; 
     box-shadow: 0 0 4px #aaa; 
     
 }
+
 .cootie canvas:nth-child(odd) { left:0;}
 .cootie canvas:nth-child(even) {left:142px;}
 .cootie canvas:nth-child(1), .cootie canvas:nth-child(2) { top:0; }
 .cootie canvas:nth-child(3), .cootie canvas:nth-child(4) { top:142px; }
-
+/*
 .cootie canvas:nth-child(3) {
 -moz-transform: rotate(90deg);  
 -o-transform: rotate(90deg);  
@@ -281,8 +281,29 @@ transform: rotate(-90deg);
 -ms-transform: rotate(180deg);  
 transform: rotate(180deg); 
 }
+*/
+.cootie canvas.opened { border:3px solid #999;}
+/* .opened: 
+.cootie canvas:nth-child(1).opened { top: -20px; }
+.cootie canvas:nth-child(2).opened { greeen: 200px; }
+.cootie canvas:nth-child(3).opened { left: 200px; }
+.cootie canvas:nth-child(4).opened { left:-20px;}
+*/
+.inline { 
+height:2em;
+display:block;
+}
 
-
+.inline li { 
+list-style:none;
+text-transform: uppercase;
+font-weight:700;
+font-size:2em;
+display:inline-block;
+margin: 0 .5em 0 0;
+padding:0;
+text-align:center;
+}
 /* end @mejarc's styles */
 
 .ir {
