@@ -200,15 +200,12 @@ body {
   background-image:      -o-linear-gradient(top, #fff, #ffc); 
   background-image:         linear-gradient(top, #fff, #ffc);
 background-attachment: fixed;
-font: 12px/2 Palatino, “Palatino Linotype”, Georgia, Times, “Times New Roman”, serif;
+font: 12px/2 'Lato', arial, serif;
 }
 
 html body #progress, html body #instructions { border: 0; }
 body div:first-child {
 /*background:rgba(0, 204, 153, 0.3);*/
-}
-body header:first-child h1 {
-    font-family: Palatino, “Palatino Linotype”, “Hoefler Text”, Times, “Times New Roman”, serif;
 }
 
 body header:first-child,
@@ -218,13 +215,14 @@ div[role=main] {
 }
 
 h1 {
+font-family: 'The Girl Next Door', cursive;
     font-size: 42px;
-    margin: 0 0 10px 0;
+    margin: 0;
 }
 
 h2 {
-    font-size:20px;
     font-style:italic;
+    font-weight:400;
     margin: 0 0 1px 0;
 }
 p {
@@ -258,30 +256,7 @@ p {
 .cootie canvas:nth-child(even) {left:142px;}
 .cootie canvas:nth-child(1), .cootie canvas:nth-child(2) { top:0; }
 .cootie canvas:nth-child(3), .cootie canvas:nth-child(4) { top:142px; }
-/*
-.cootie canvas:nth-child(3) {
--moz-transform: rotate(90deg);  
--o-transform: rotate(90deg);  
--webkit-transform: rotate(90deg);  
--ms-transform: rotate(90deg);  
-transform: rotate(90deg);  
-}
 
-.cootie canvas:nth-child(2) { 
--moz-transform: rotate(-90deg);  
--o-transform: rotate(-90deg);  
--webkit-transform: rotate(-90deg);  
--ms-transform: rotate(-90deg);  
-transform: rotate(-90deg);  
-}
-.cootie canvas:nth-child(1) { 
--moz-transform: rotate(180deg);  
--o-transform: rotate(180deg);  
--webkit-transform: rotate(180deg);  
--ms-transform: rotate(180deg);  
-transform: rotate(180deg); 
-}
-*/
 .cootie canvas.opened { border:3px solid #999;}
 /* .opened: 
 .cootie canvas:nth-child(1).opened { top: -20px; }

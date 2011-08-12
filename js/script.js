@@ -24,8 +24,9 @@ $j.css(
 //); 
 }
 function playCootie(whichColor) {
+var i=0;
     //get letters in color name
-    for (var i = 0, len = whichColor.length; i < len; i++) {
+    for (; i < whichColor.length; i++) {
         var li = '<li>' + whichColor[i] + '</li>';
         $('#progress').append(li);
         moveCootie(i + 1);
@@ -35,12 +36,13 @@ function playCootie(whichColor) {
 
 
 function drawCootie() {
-    var $canvas, ctx, w, h, grad, strokeColor, fillColors, rand, squareColor;
+    var i, $canvas, ctx, w, h, grad, strokeColor, fillColors, rand, squareColor;
+    i=0;
     w = 140;
     h = 140;
     strokeColor = '#999';
     fillColors = ['red', 'green', 'blue', 'yellow'];
-    for (var i = 0; i < 4; i++) {
+    for (; i < 4; i++) {
         $canvas = $(document.createElement('canvas')).prop({
             'width': w,
             'height': h
