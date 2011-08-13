@@ -223,12 +223,10 @@ font-family: 'The Girl Next Door', cursive;
 h2 {
     font-style:italic;
     font-weight:400;
-    margin: 0 0 1px 0;
+letter-spacing: .15em;
+line-height: 1.67;
 }
-p {
-    margin: 0 0 15px 0;
-    color: #666;
-}
+body div[role=main] { text-align:center; }
 
 .cootie {
     margin: 75px auto 15px auto;

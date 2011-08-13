@@ -1,8 +1,4 @@
 <!doctype html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="en" class="no-js">
 <!--<![endif]-->
@@ -11,13 +7,13 @@
 		<title>
 			HTML5/jQuery Cootie Catcher 
 		</title>
-		<meta name="description" content=""> <meta name="author" content=""> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--<link rel="shortcut icon" href="/favicon.ico"> <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
-		<link href='http://fonts.googleapis.com/css?family=Lato|The+Girl+Next+Door' rel='stylesheet' />
-<link rel="stylesheet" href="css/style.css?v=2"> <script src="js/libs/modernizr-1.7.min.js"></script> 
+		<meta name="description" content=""> <meta name="author" content="@banane and @mejarc"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<!--<link rel="shortcut icon" href="/favicon.ico"> <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+		<link href='http://fonts.googleapis.com/css?family=Lato|The+Girl+Next+Door' rel='stylesheet' /> <link rel="stylesheet" href="css/style.css?v=2"> <script src="js/libs/modernizr-1.7.min.js"></script> 
 	</head>
 	<body>
 		<div id="container">
-			TODO: * onclick image wide/tall canvas animation-: http://api.jquery.com/animate/ * heading font *bg image of girls on playground * more fortunes 
+			TODO: * refactor per http://www.wait-till-i.com/2006/02/16/show-love-to-the-object-literal/* onclick image wide/tall canvas animation-: http://api.jquery.com/animate/ *bg image of girls on playground * more fortunes 
 			<header>
 				<h1>
 					Cootie Catcher! 
@@ -26,86 +22,31 @@
 					That ageless game that young girls in playgrounds play around the world. With a few turns of fate you can find your fortune! 
 				</h2>
 			</header>
-			<div id="main" role="main"><h3>
+			<div id="main" role="main">
+				<p>
 					Choose a color by clicking on it. 
-				</h3>
-				<ul class="inline" id="progress"></ul>
-					<div class="progressStage" id="stage1">
-					</div>
-					<div class="progressStage" id="stage2">
-					</div>
-					<div class="progressStage" id="stage3">
-					</div>
-				
-				<div  class="cootie">
-					
-					
-			</div>
-			<div id="tall" style="display:none;">
-				<div class="cootieRow1">
-					<a href="javascript: playCootie(2)">
-					<div class="cootieLeftCell">
-						<img src="images/2.png" /> 
-					</div>
-				</a>
-				<a href="javascript: playCootie(5)">
-				<div class="cootieRightCell">
-					<img src="images/5.png" /> 
+				</p>
+				<ul class="inline" id="progress">
+				</ul>
+				<div class="cootie clicker opened">
 				</div>
-			</a>
-		</div>
-		<div class="cootieRow2">
-			<a href="javascript: playCootie(1)">
-			<div class="cootieLeftCell">
-				<img src="images/1.png" /> 
+				<div class="cootie clicker closed">
+				</div>
+				<div class="cootie clicker closed">
+				</div>
+				<p id="play again" style="display:none">
+				<a href="index.html">
+					Play again! 
+				</a>
+				</p>
 			</div>
-		</a>
-		<a href="javascript: playCootie(6)">
-		<div class="cootieRightCell">
-			<img src="images/6.png" /> 
-		</div>
-	</a>
-</div>
-<div id="wide" style="display:none;">
-	<div class="cootieRow1">
-		<a href="javascript: playCootie(3)">
-		<div class="cootieLeftCell">
-			<img src="images/3.png" /> 
-		</div>
-	</a>
-	<a href="javascript: playCootie(4)">
-	<div class="cootieRightCell">
-		<img src="images/4.png" /> 
-	</div>
-</a>
-</div>
-<div class="cootieRow2">
-	<a href="javascript: playCootie(8)">
-	<div class="cootieLeftCell">
-		<img src="images/8.png" /> 
-	</div>
-</a>
-<a href="javascript: playCootie(7)">
-<div class="cootieRightCell">
-	<img src="images/7.png" /> 
-</div>
-</a>
-</div>
-</div>
-<p id="play again" style="display:none">
-<a href="index.html">
-	Play again! 
-</a>
-</p>
-</div>
-<footer>
-	@banane, @mejarc 
-</footer>
-</div>
+			<footer>
+				@banane, @mejarc 
+			</footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> <script>!window.jQuery && document.write(unescape("%3Cscript src='js/libs/jquery-1.5.1.min.js'%3E%3C/script%3E"))</script> <script src="js/script.js"></script> 
 <!--[if lt IE 7 ]>
 	<script src="js/libs/dd_belatedpng.js"></script>
 	<script> DD_belatedPNG.fix("img, .png_bg");</script>
 	<![endif]-->
-</body>
+	</body>
 </html>
