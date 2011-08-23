@@ -1,16 +1,21 @@
 //http://www.banane.com/2010/02/07/how-cootie-catcher-is-made/
 
-function moveCootie(howMuch) {
-    var $j, h, w, m;
-    $j = '.cootie canvas';
-    h = 280;
-    w = 280;
-    m = 20;
-    $j.css({
-        'width': w,
-        'height': h,
-        'margin-right': m + 'px'
-    });
+function moveCootie(times) {
+    var $cootie, degree, i;
+    $cootie = $('.cootie');
+    i = 1;
+    degree = 15;
+
+    function skew() {
+        $cootie.css('-webkit-transform', 'skew(-' + degree + 'deg)').css('-moz-transform', 'skew(-' + degree + 'deg)').css('transform', 'skew(-' + degree + 'deg)'); //skew one way
+        $cootie.css('-webkit-transform', 'skew(' + degree + 'deg)').css('-moz-transform', 'skew(' + degree + 'deg)').css('transform', 'skew(' + degree + 'deg)'); //skew the other
+        //todo:opera
+    }
+    for (; i <= times; i++) {
+        skew();
+        console.log('i:' + i + 'times:' + times);
+    }
+
 
 }
 
@@ -19,13 +24,13 @@ function playCootie(whichColor) {
     //get letters in color name
     for (; i < whichColor.length; i++) {
         var li = '<li>' + whichColor[i] + '</li>';
-        $('#progress').append(li);
         moveCootie(i + 1);
+        $('#progress').append(li);
     }
 }
 
 function drawCootie() {
-    var i, $canvas, ctx, w, h, grad, strokeColor, fillColors, rand, squareColor;
+    var i, $canvas, ctx, w, h, strokeColor, fillColors, rand, squareColor;
     i = 0;
     w = 140;
     h = 140;
@@ -38,7 +43,7 @@ function drawCootie() {
         }).appendTo('.cootie');
     }
     if ($('.cootie canvas', '#main').length) {
-    console.log($canvas);
+        console.log($canvas);
         $('.cootie canvas', '#main').each(function() {
             rand = Math.floor(Math.random() * fillColors.length);
             squareColor = fillColors.splice(rand, 1)[0];

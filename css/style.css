@@ -218,7 +218,6 @@ body header:first-child {
 }
 
 h1 {
-    font-family: 'The Girl Next Door', cursive;
     font-size: 42px;
     margin: 0;
 }
@@ -228,6 +227,8 @@ h2 {
     font-weight:400;
     letter-spacing: .15em;
     line-height: 1.67;
+}
+h1, ul[role=progress] {     font-family: 'The Girl Next Door', cursive;
 }
 body div[role=main] { text-align:center; }
 
@@ -241,17 +242,14 @@ body div[role=main] { text-align:center; }
     -webkit-transform: rotate(45deg);  
     -ms-transform: rotate(45deg);  
     transform: rotate(45deg);  
-    
-}
+    text-indent:45px; /* used for jQuery animation */
+    }
 
 .cootie canvas { 
     display:block;
     position:absolute;
-    -moz-box-shadow: 0 0 4px #aaa; 
-    -webkit-box-shadow: 0 0 4px #aaa; 
-    box-shadow: 0 0 4px #aaa; 
-    
 }
+.cootie.closed { display:none; }
 
 .cootie canvas:nth-child(odd) { left:0;}
 .cootie canvas:nth-child(even) {left:142px;}
