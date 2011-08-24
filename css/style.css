@@ -242,7 +242,6 @@ body div[role=main] { text-align:center; }
     -webkit-transform: rotate(45deg);  
     -ms-transform: rotate(45deg);  
     transform: rotate(45deg);  
-    text-indent:45px; /* used for jQuery animation */
     }
 
 .cootie canvas { 

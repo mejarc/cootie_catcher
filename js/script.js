@@ -1,9 +1,10 @@
 //http://www.banane.com/2010/02/07/how-cootie-catcher-is-made/
 
 function moveCootie(times) {
-    var $cootie, degree, i;
-    $cootie = $('.cootie');
+    var $cootie, degree, i, j, interval;
+    $cootie = $('.cootie.opened');
     i = 1;
+    j = 0;
     degree = 15;
 
     function skew() {
@@ -11,12 +12,21 @@ function moveCootie(times) {
         $cootie.css('-webkit-transform', 'skew(' + degree + 'deg)').css('-moz-transform', 'skew(' + degree + 'deg)').css('transform', 'skew(' + degree + 'deg)'); //skew the other
         //todo:opera
     }
-    for (; i <= times; i++) {
+    interval = setInterval(function(){
+    skew();
+    }, 1000);
+
+    if (i < times) {//Blog: why won't this loop???
         skew();
-        console.log('i:' + i + 'times:' + times);
-    }
-
-
+    }++i;
+    if (i>=times) {
+        if (j < times || times === 0) {
+            i = 1;
+        }
+        else {
+            clearInterval(interval);
+        }
+    }j++;
 }
 
 function playCootie(whichColor) {
@@ -24,9 +34,9 @@ function playCootie(whichColor) {
     //get letters in color name
     for (; i < whichColor.length; i++) {
         var li = '<li>' + whichColor[i] + '</li>';
-        moveCootie(i + 1);
         $('#progress').append(li);
     }
+    moveCootie(i);
 }
 
 function drawCootie() {
@@ -43,7 +53,6 @@ function drawCootie() {
         }).appendTo('.cootie');
     }
     if ($('.cootie canvas', '#main').length) {
-        console.log($canvas);
         $('.cootie canvas', '#main').each(function() {
             rand = Math.floor(Math.random() * fillColors.length);
             squareColor = fillColors.splice(rand, 1)[0];
@@ -52,11 +61,11 @@ function drawCootie() {
             ctx.fillStyle = squareColor;
             ctx.fillRect(0, 0, w, h);
             $(this).addClass(squareColor);
-        });
-        $(this).click(function(e) {
-            var clr = e.target.className.split(' ').pop();
-            //get last class name, since that has the color
-            playCootie(clr);
+            $(this).click(function(e) {
+                var clr = e.target.className.split(' ').pop();
+                //get last class name, since that has the color
+                playCootie(clr);
+            });
         });
     }
 
