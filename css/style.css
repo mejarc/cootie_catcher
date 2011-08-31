@@ -213,8 +213,8 @@ body header:first-child {
     background-image: url('../images/girls.jpg'),-ms-linear-gradient(top, #D9D9D9, #ffffff); 
     background-image: url('../images/girls.jpg'),-o-linear-gradient(top, #D9D9D9, #ffffff); 
     background-size: 225px 220px, auto auto;
-   background-repeat: no-repeat;
-
+    background-repeat: no-repeat;
+    
 }
 
 h1 {
@@ -242,12 +242,31 @@ body div[role=main] { text-align:center; }
     -webkit-transform: rotate(45deg);  
     -ms-transform: rotate(45deg);  
     transform: rotate(45deg);  
-    }
+}
+
+.cootie.skew {
+    -moz-transform: skew(15deg);  
+    -o-transform: skew(15deg);  
+    -webkit-transform: skew(15deg);  
+    -ms-transform: skew(15deg);  
+    transform: skew(15deg);  
+}
+.cootie.revskew {
+    -moz-transform: skew(-30deg);  
+    -o-transform: skew(-30deg);  
+    -webkit-transform: skew(-30deg);  
+    -ms-transform: skew(-30deg);  
+    transform: skew(-30deg);  
+}
 
 .cootie canvas { 
     display:block;
     position:absolute;
 }
+.cootie canvas.target {
+    cursor:pointer;
+}
+
 .cootie.closed { display:none; }
 
 .cootie canvas:nth-child(odd) { left:0;}
@@ -255,7 +274,6 @@ body div[role=main] { text-align:center; }
 .cootie canvas:nth-child(1), .cootie canvas:nth-child(2) { top:0; }
 .cootie canvas:nth-child(3), .cootie canvas:nth-child(4) { top:142px; }
 
-.cootie canvas.opened { border:3px solid #999;}
 /* .opened: 
 .cootie canvas:nth-child(1).opened { top: -20px; }
 .cootie canvas:nth-child(2).opened { greeen: 200px; }
