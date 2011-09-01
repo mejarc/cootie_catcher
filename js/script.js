@@ -1,28 +1,31 @@
 //http://www.banane.com/2010/02/07/how-cootie-catcher-is-made/
 
-function moveCootie(times) { //blog: looping this is a nightmare/lesson in closures. TODO: break on times;
-    var $cootie = $('.cootie.opened'),
-        start = start || 0,
-        skew =
-
-        function() {
-            start++;
-            setInterval(function() {
+function moveCootie(times) { //blog: looping this is a nightmare/lesson in setInterval;
+    var rt, lt, $cootie = $('.cootie.opened'),
+        start = times - 1 || 1,
+        skew = function() {
+            lt = setInterval(function() {
                 $cootie.toggleClass('skew');
             }, 800);
-            setInterval(function() {
+
+            rt = setInterval(function() {
                 $cootie.toggleClass('revskew');
             }, 800);
-      };
-   skew();
-   
+            start++;
+            if (start >= times) {
+                clearInterval(lt);
+                clearInterval(rt);
+            }
+        };
+    skew();
+
 }
 
 function playCootie(whichColor) {
     var i, len = whichColor.length,
         li;
     //get letters in color name
-    for (i = 0;  i < len; i++) {
+    for (i = 0; i < len; i++) {
         li = '<li>' + whichColor[i] + '</li>';
         $('#progress').append(li);
     }
