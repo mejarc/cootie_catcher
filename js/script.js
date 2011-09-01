@@ -1,33 +1,36 @@
 //http://www.banane.com/2010/02/07/how-cootie-catcher-is-made/
 
-function moveCootie(times) {
-    var len = times,
-        i = 0,
-        $cootie = $('.cootie.opened');
-    for (; i < len; i++) { //Blog: why won't this loop???
+function moveCootie(times) { //blog: looping this is a nightmare/lesson in closures. TODO: break on times;
+    var $cootie = $('.cootie.opened'),
+        start = start || 0,
+        skew =
 
-            $('.cootie.opened').switchClass('skew', 'revskew', 500);
-            console.log($cootie.attr('class'));
-
-    }
-
+        function() {
+            start++;
+            setInterval(function() {
+                $cootie.toggleClass('skew');
+            }, 800);
+            setInterval(function() {
+                $cootie.toggleClass('revskew');
+            }, 800);
+      };
+   skew();
+   
 }
 
 function playCootie(whichColor) {
-    var i, len, li;
+    var i, len = whichColor.length,
+        li;
     //get letters in color name
-    for (i = 0, len = whichColor.length; i < len; i++) {
+    for (i = 0;  i < len; i++) {
         li = '<li>' + whichColor[i] + '</li>';
         $('#progress').append(li);
-        //$('#progress li').fadeIn(1000).delay(800).fadeOut(1000);
     }
-    moveCootie(i);
-
+    moveCootie(len);
 }
 
 function drawCootie() {
-    var $canvas, ctx, rand, squareColor;
-    var i = 0,
+    var $canvas, ctx, rand, squareColor, i = 0,
         w = 140,
         h = 140,
         strokeColor = '#999',
