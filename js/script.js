@@ -12,7 +12,7 @@ function moveCootie(times) { //blog: looping this is a nightmare/lesson in setIn
                 $cootie.toggleClass('revskew');
             }, 800);
             start++;
-            if (start >= times) {
+            if (start > times) { alert('here');
                 clearInterval(lt);
                 clearInterval(rt);
             }
