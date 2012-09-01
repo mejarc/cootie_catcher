@@ -2,7 +2,76 @@
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,/**
+ * based on "Scalable and Modular Architecture for CSS," by Jonathan Snook: http://smacss.com/book/
+ * Rules for rendering efficiency: use child selectors, avoid tag selectors, and use class names for the right-most selector.
+ * Rules listed in this order: 1) Box, 2) Border, 3) Background, 4) Text, 5) Other
+ */
+
+/**
+ * Base.  Default rules for elements; 
+ * no class or ID selectors; 
+ * how that element should look in all occurrences on the page.
+ */
+body {
+    background: #fff;
+/* margin, padding, background, font, color */    
+}
+
+.cootie.container { 
+    margin: 75px auto 15px auto;
+    position:relative;
+    width:300px;
+    height:300px;
+   -moz-transform: rotate(45deg);  
+    -o-transform: rotate(45deg);  
+    -webkit-transform: rotate(45deg);  
+    -ms-transform: rotate(45deg);  
+    transform: rotate(45deg);
+}
+
+.cootie.container.skew {
+    -moz-transform: skew(15deg);  
+    -o-transform: skew(15deg);  
+    -webkit-transform: skew(15deg);  
+    -ms-transform: skew(15deg);  
+    transform: skew(15deg);  
+}
+
+.cootie.square { 
+    position:absolute;
+    height:140px;
+    width:140px;
+    z-index:2;
+}
+.cootie.target {     
+cursor:pointer;
+}
+.cootie.square:nth-child(odd) { left:0;}
+.cootie.square:nth-child(even) {left:142px;}
+.cootie.square:nth-child(1), .cootie.square:nth-child(2) { top:0; }
+.cootie.square:nth-child(3), .cootie.square:nth-child(4) { top:142px; }
+
+.red{background: hsl(360, 100.0000%, 53.7037%);}
+.green{background: hsl(124, 100.0000%, 54.6307%);}
+.blue {background: hsl(227, 100.0000%, 59.8054%);}
+.yellow{background:hsl(58, 100.0000%, 52.8878%);}
+
+.inline { 
+    height:2em;
+    display:block;
+}
+.inline li { 
+    list-style:none;
+    text-transform: uppercase;
+    font-weight:700;
+    font-size:2em;
+   float: left;
+    margin: 0 .5em 0 0;
+    padding:0;
+    text-align:center;
+}
+​
 small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
