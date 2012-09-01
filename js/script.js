@@ -51,4 +51,4 @@ var cootie = {
 
 $(function() {
     cootie.draw();
-});
+});​
