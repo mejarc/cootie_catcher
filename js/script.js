@@ -1,4 +1,13 @@
-var cootie = {
+//TODO: mv helpers and event handlers into better code; 2nd round of cootie play (divide 4 squares into 8, number them)
+
+//globals
+fillColors = ['red', 'green', 'blue', 'yellow'];
+
+//helpers
+//event handlers
+
+//classes 
+var Cootie = {
     play: function(whichColor) {
         var i, $progress = $('#progress').empty(),
             $cootie = $('.cootie.container'),
@@ -21,10 +30,7 @@ var cootie = {
         });
     },
     draw: function() {
-        var rand, i = 0,
-            fillColors = ['red', 'green', 'blue', 'yellow'];
-
-
+        var rand, i = 0;
         for (; i < fillColors.length; i++) {
             $('<div class="cootie square">').prependTo($('.cootie.container'));
         }
@@ -32,13 +38,12 @@ var cootie = {
             $('.cootie.container .square').each(function() {
                 rand = Math.floor(Math.random() * fillColors.length);
                 squareColor = fillColors.splice(rand, 1)[0];
-
                 $(this).addClass('target ' + squareColor);
                 $(this).click(function(e) {
                     var clr = e.target.className.split(' ').pop();
                     //get second CSS class name, since that has the color
                     if ($(this).is('.target')) {
-                        cootie.play(clr);
+                        Cootie.play(clr);
                         // $('.target').removeClass('target');
                     }
 
@@ -48,7 +53,7 @@ var cootie = {
         }
     }
 };
-
+// initializer
 $(function() {
-    cootie.draw();
+    Cootie.draw();
 });​
